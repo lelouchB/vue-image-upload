@@ -21,34 +21,34 @@
   </div>
 
   <button type="submit" v-on:click="upload">Upload</button>
-  <h3 v-if="success">File Uploaded Successfully. publicId: {{success}}</h3>
+  <h3 v-if="success">File Uploaded Successfully. publicId: {{ success }}</h3>
 </template>
 
 <script>
 export default {
   name: "App",
-  data(){
-    return{
+  data() {
+    return {
       fileName: "",
       preview: null,
       preset: process.env.VUE_APP_UPLOAD_PRESET,
       formData: null,
       cloudName: process.env.VUE_APP_CLOUD_NAME,
-      success:""
-    }
+      success: "",
+    };
   },
-  methods:{
+  methods: {
     handleFileChange: function (event) {
       this.file = event.files[0];
       this.fileName = this.file.name;
-     
+
       this.formData = new FormData();
       this.formData.append("upload_preset", this.preset);
 
       let reader = new FileReader();
       reader.readAsDataURL(this.file);
 
-        reader.onload = (e) => {
+      reader.onload = (e) => {
         this.preview = e.target.result;
         this.formData.append("file", this.preview);
       };
@@ -67,8 +67,7 @@ export default {
       this.formData = null;
       this.success = data.public_id;
     },
-
-  }
+  },
 };
 </script>
 <style>
@@ -79,9 +78,8 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
-    display: flex;
+  display: flex;
   flex-direction: column;
-
 }
 .dropzone {
   height: fit-content;
