@@ -1,4 +1,6 @@
 # vue-image-upload
+![Screenshot_2021-05-30 vue-image-upload](https://user-images.githubusercontent.com/45850882/120102689-dbe6e080-c169-11eb-92ba-94c32148eae1.png)
+
 
 ## Project setup
 ```
